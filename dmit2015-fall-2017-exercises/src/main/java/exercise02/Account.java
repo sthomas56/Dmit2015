@@ -13,6 +13,14 @@ public class Account {
 	private ArrayList<Transaction> transactions = new ArrayList<>(); //getter;
 	
 	
+	@Override
+	public String toString() {
+		return "Account [id=" + id + ", balance=" + balance + ", annualInterestRate=" + annualInterestRate
+				+ ", dateCreated=" + dateCreated + ", name=" + name + ", transactions=" + transactions
+				+ ", getMonthlyInterestRate()=" + getMonthlyInterestRate() + ", getMonthlyInterest()="
+				+ getMonthlyInterest() + "]";
+	}
+
 	public double getMonthlyInterestRate() {
 		return annualInterestRate / 12 /100;
 	}

@@ -11,6 +11,12 @@ public class Transaction {
 	private String description; // getter/setter
 	
 	
+	
+	@Override
+	public String toString() {
+		return "\nTransaction [date=" + date + ", type=" + type + ", amount=" + amount + ", balance=" + balance
+				+ ", description=" + description + "]";
+	}
 	public Date getDate() {
 		return date;
 	}
