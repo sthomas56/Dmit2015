@@ -18,11 +18,12 @@ public class AccountTest {
 		currentAccount.withdraw(2, "candy");
 		// check the account holder name
 		assertEquals("George", currentAccount.getName());
-		//check the interest rate
+		//check the interest rate is 1.5
 		assertEquals()
 		//check the balance is 
 		assertEquals()
 		//check number of transactions is 6
+		
 		//check all 3 withdraw transactions
 		//check all 3 deposit transactions
 		

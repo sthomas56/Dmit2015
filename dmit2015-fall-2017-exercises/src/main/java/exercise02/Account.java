@@ -27,6 +27,7 @@ public class Account {
 			balance -= amount;
 			Transaction currentTransaction = new Transaction('W', amount, balance, description);
 			transactions.add(currentTransaction);
+	
 			
 		}
 	}
