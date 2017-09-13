@@ -17,6 +17,8 @@ public class Transaction {
 		return "\nTransaction [date=" + date + ", type=" + type + ", amount=" + amount + ", balance=" + balance
 				+ ", description=" + description + "]";
 	}
+	
+	
 	public Date getDate() {
 		return date;
 	}
