@@ -2,6 +2,7 @@ package chinook.model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import java.util.List;
 
 
 /**
@@ -18,8 +19,12 @@ public class Artist implements Serializable {
 	@Column(name="ArtistId")
 	private int artistId;
 
-	@Column(name="Name") 
+	@Column(name="Name")
 	private String name;
+
+	//bi-directional many-to-one association to Album
+	@OneToMany(mappedBy="artist")
+	private List<Album> albums;
 
 	public Artist() {
 	}
@@ -40,9 +45,26 @@ public class Artist implements Serializable {
 		this.name = name;
 	}
 
-	@Override
-	public String toString() {
-		return "Artist [artistId=" + artistId + ", name=" + name + "]";
+	public List<Album> getAlbums() {
+		return this.albums;
+	}
+
+	public void setAlbums(List<Album> albums) {
+		this.albums = albums;
+	}
+
+	public Album addAlbum(Album album) {
+		getAlbums().add(album);
+		album.setArtist(this);
+
+		return album;
+	}
+
+	public Album removeAlbum(Album album) {
+		getAlbums().remove(album);
+		album.setArtist(null);
+
+		return album;
 	}
 
 }
