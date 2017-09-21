@@ -18,7 +18,7 @@ public class Artist implements Serializable {
 	@Column(name="ArtistId")
 	private int artistId;
 
-	@Column(name="Name")
+	@Column(name="Name") 
 	private String name;
 
 	public Artist() {
